@@ -168,7 +168,7 @@ class VkHook(APIView):
 
 
 def web_socket(self):
-    ws = create_connection("wss://web-socket-server-lab.herokuapp.com/")
+    ws = create_connection("wss://socket-curs.herokuapp.com/")
     ws.send(json.dumps({
         "messageType": "data",
         "cars": CarSerializer(self.get_queryset(), many=True).data
