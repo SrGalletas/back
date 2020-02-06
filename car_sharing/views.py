@@ -67,12 +67,12 @@ class CarList(generics.ListCreateAPIView):
     serializer_class = CarSerializer
 
     def get(self, request, *args, **kwargs):
-        #web_socket(self)
+        web_socket(self)
         return super().get(request, *args, **kwargs)
 
     def post(self, request, *args, **kwargs):
         response = super().post(request, *args, **kwargs)
-        #web_socket(self)
+        web_socket(self)
         return response
 
     def get_queryset(self):
