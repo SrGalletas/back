@@ -136,8 +136,8 @@ class VkHook(APIView):
     permission_classes = [AllowAny]
 
     def post(self, request):
-        if request.data.get('type') == "confirmation" and request.data.get("group_id") == 188729360:
-            return HttpResponse('df7968cb')
+        if request.data.get('type') == "confirmation" and request.data.get("group_id") == 191692420:
+            return HttpResponse('9f9b893e')
 
         label = request.data.get('object').get('body').split('\n')
         car = {"model": label[0], "price": label[1]}
