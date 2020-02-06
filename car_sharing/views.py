@@ -145,14 +145,14 @@ class VkHook(APIView):
         if serializer.is_valid(raise_exception=True):
             car_saved = serializer.save()
 
-        ws = create_connection("wss://web-socket-server-lab.herokuapp.com/")
+        ws = create_connection("wss://socket-curs.herokuapp.com/")
         ws.send(json.dumps({
             "messageType": "vkHook",
             "data": request.data
         }))
         ws.close()
 
-        ws = create_connection("wss://web-socket-server-lab.herokuapp.com/")
+        ws = create_connection("wss://socket-curs.herokuapp.com/")
         ws.send(json.dumps({
             "messageType": "data",
             "cars": CarSerializer(Car.objects.all(), many=True).data
